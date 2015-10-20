@@ -13,17 +13,18 @@ app.use(function (err, req, res, next) {
     console.log(err + ":" + "Error");
     res.send(err);
 });
+var data = JSON.stringify([{ id: 1, name: "Rehan", age: 24 },
+    { id: 2, name: "A", age: 24 },
+    { id: 3, name: "B", age: 24 },
+    { id: 4, name: "C", age: 24 },
+    { id: 5, name: "D", age: 24 },
+    { id: 6, name: "E", age: 24 },
+    { id: 7, name: "f", age: 24 },
+    { id: 8, name: "G", age: 24 },]);
 app.get('/', function (req, res, next) {
     res.render('index', {
         title: 'First TodoApp',
-        supplies: JSON.stringify([{ id: 1, name: "Rehan", age: 24 },
-            { id: 2, name: "A", age: 24 },
-            { id: 3, name: "B", age: 24 },
-            { id: 4, name: "C", age: 24 },
-            { id: 5, name: "D", age: 24 },
-            { id: 6, name: "E", age: 24 },
-            { id: 7, name: "f", age: 24 },
-            { id: 8, name: "G", age: 24 },])
+        supplies: data
     });
 });
 app.post('/', function (req, res, next) {
