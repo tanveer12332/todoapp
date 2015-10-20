@@ -12,35 +12,24 @@ app.set('view engine', 'ejs');
 app.use(function (err, req, res, next) {
     console.log(err + ":" + "Error");
     res.send(err);
+    next();
 });
-var data = JSON.stringify([{ id: 1, name: "Rehan", age: 24 },
-    { id: 2, name: "A", age: 24 },
-    { id: 3, name: "B", age: 24 },
-    { id: 4, name: "C", age: 24 },
-    { id: 5, name: "D", age: 24 },
-    { id: 6, name: "E", age: 24 },
-    { id: 7, name: "f", age: 24 },
-    { id: 8, name: "G", age: 24 },]);
+var data = [{ id: 1, name: "Rehan", age: 24 }, { id: 2, name: "A", age: 24 }, { id: 3, name: "B", age: 24 }, { id: 4, name: "C", age: 24 }, { id: 5, name: "D", age: 24 }, { id: 6, name: "E", age: 24 }, { id: 7, name: "f", age: 24 }, { id: 8, name: "G", age: 24 }];
 app.get('/', function (req, res, next) {
     res.render('index', {
         title: 'First TodoApp',
-        supplies: data
+        supplies: JSON.stringify(data)
     });
+    console.log(data);
 });
 app.post('/', function (req, res, next) {
-    var data = res.json(req.body);
-    res.render('index', {
-        title: 'First TodoApp',
-        supplies: JSON.stringify([{ id: 1, name: "Rehan", age: 24 },
-            { id: 2, name: "A", age: 24 },
-            { id: 3, name: "B", age: 24 },
-            { id: 4, name: "C", age: 24 },
-            { id: 5, name: "D", age: 24 },
-            { id: 6, name: "E", age: 24 },
-            { id: 7, name: "f", age: 24 },
-            { id: 8, name: "G", age: 24 },])
-    });
-    next();
+    /*req.params.inputname;
+    req.params.inputEmail;
+    req.body.inputname;
+    req.body.inputEmail;*/
+    res.render('index');
+    //next();
+    //res.send("test" + JSON.stringify(req.body));
 });
 ///server setting 
 var port = process.env.PORT || 3000;
