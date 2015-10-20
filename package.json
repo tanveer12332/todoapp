@@ -1,0 +1,30 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "todo app ts",
+  "main": "\"\"",
+  "scripts": {
+    "test": "hello todo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanveer12332/todoapp.git"
+  },
+  "author": "Muhammad Tanveer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanveer12332/todoapp/issues"
+  },
+  "homepage": "https://github.com/tanveer12332/todoapp#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-typescript": "^2.9.2",
+    "gulp-watch": "^4.3.5",
+    "nodemon": "^1.7.2"
+  }
+}

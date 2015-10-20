@@ -1,0 +1,33 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "express/express.d.ts": {
+      "commit": "85fb1aa205b1a113bdbaeb72199d1c8692b5f143"
+    },
+    "node/node.d.ts": {
+      "commit": "85fb1aa205b1a113bdbaeb72199d1c8692b5f143"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "85fb1aa205b1a113bdbaeb72199d1c8692b5f143"
+    },
+    "mime/mime.d.ts": {
+      "commit": "85fb1aa205b1a113bdbaeb72199d1c8692b5f143"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "85fb1aa205b1a113bdbaeb72199d1c8692b5f143"
+    },
+    "orchestrator/orchestrator.d.ts": {
+      "commit": "85fb1aa205b1a113bdbaeb72199d1c8692b5f143"
+    },
+    "q/Q.d.ts": {
+      "commit": "85fb1aa205b1a113bdbaeb72199d1c8692b5f143"
+    },
+    "gulp-watch/gulp-watch.d.ts": {
+      "commit": "85fb1aa205b1a113bdbaeb72199d1c8692b5f143"
+    }
+  }
+}

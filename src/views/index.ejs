@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TypeScript TodoApp</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
+	</head>
+	
+<body>
+<div class="container">
+	<h1 class="h1 text-center"><%=title%></h1>
+	
+	<div class="well-sm"></div>
+	<form class="form-horizontal" action="/" method="get">
+		<div class="col-sm-6">
+		  	 <label for="inputname" class="control-label">Name</label>
+ 		     <input type="text" class="form-control" name="inputname" placeholder="Enter your name">
+		 </div>
+		
+		<div class="col-sm-6">
+			<label for="inputEmail" class="control-label">Email</label>
+ 		     <input type="text" class="form-control" name="inputEmail" placeholder="Enter your email">
+		</div>
+		<div class="clearfix"></div>
+		<div class="well-sm"></div>
+			<div class="col-sm-12">
+				<button type="submit" class="btn btn-primary pull-right">Save</button>
+			</div>
+	</form>
+	<div class="clearfix"></div>
+	<div class="well-sm"></div>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<% data = supplies%>
+			
+			<% for(var i=0; i<data.length; i++) {%>
+ 					  <td><% data[i] %></td>
+				<% } %>
+				<td><a href="javascript:void(0)" onclick="delete(id)">Delete</a></td>
+			
+			</tr>
+				
+		</tbody>
+	</table>
+</div>
+	
+</body>
+</html>
