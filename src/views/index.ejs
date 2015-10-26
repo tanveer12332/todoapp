@@ -10,7 +10,7 @@
 	<h1 class="h1 text-center"><%=title%></h1>
 	
 	<div class="well-sm"></div>
-	<form class="form-horizontal" action="/" method="get">
+	<form class="form-horizontal" action="/" method="post">
 		<div class="col-sm-6">
 		  	 <label for="inputname" class="control-label">Name</label>
  		     <input type="text" class="form-control" name="inputname" placeholder="Enter your name">
@@ -37,16 +37,15 @@
 			</tr>
 		</thead>
 		<tbody>
+		
+		<% for(var i=0; i<supplies.length; i++) {%>
 			<tr>
-			
-			
-			<% for(var i=0; i<supplies.length; i++) {%>
- 					  <td><%= supplies[i] %></td>
-				<% } %>
-				<td><a href="javascript:void(0)" onclick="delete(id)">Delete</a></td>
-			
+			  <td><%= supplies[i].name %></td>
+			  <td><%= supplies[i].email %></td>
+			  <td><a href="<%= supplies[i].id %>">Delete</a></td>
 			</tr>
-				
+			<% } %>
+			
 		</tbody>
 	</table>
 </div>
