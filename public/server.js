@@ -5,31 +5,33 @@ var viewRenderEngine = require('ejs');
 var app = express();
 app.use(express.static('./public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 //check route error
-app.use(function (err, req, res, next) {
-    console.log(err + ":" + "Error");
-    res.send(err);
-    next();
-});
-var data = [{ id: 1, name: "Rehan", age: 24 }, { id: 2, name: "A", age: 24 }, { id: 3, name: "B", age: 24 }, { id: 4, name: "C", age: 24 }, { id: 5, name: "D", age: 24 }, { id: 6, name: "E", age: 24 }, { id: 7, name: "f", age: 24 }, { id: 8, name: "G", age: 24 }];
+var data = [{ id: 0, name: "Tanveer", email: "igm.tan@gmail.com" }, { id: 1, name: "Kamran", email: "kamran@gmail.com" }];
 app.get('/', function (req, res, next) {
     res.render('index', {
         title: 'First TodoApp',
-        supplies: JSON.stringify(data)
+        supplies: data
     });
-    console.log(data);
 });
-app.post('/', function (req, res, next) {
-    /*req.params.inputname;
-    req.params.inputEmail;
-    req.body.inputname;
-    req.body.inputEmail;*/
-    res.render('index');
-    //next();
-    //res.send("test" + JSON.stringify(req.body));
+app.post('/', function (req, res) {
+    data.push({ id: (data.length + 1), name: req.body.inputname, email: req.body.inputEmail });
+    res.redirect('/');
+});
+app.get('/:id', function (req, res, next) {
+    data.forEach(function (val, index) {
+        if (val.id == req.params.id) {
+            data.splice(index, 1);
+            res.redirect('/');
+        }
+    });
+    next();
+});
+app.use(function (err, req, res, next) {
+    console.log(err + ":" + "Error");
+    res.send(err);
 });
 ///server setting 
 var port = process.env.PORT || 3000;
